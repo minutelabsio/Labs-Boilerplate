@@ -1,4 +1,5 @@
-$btn-pop: 3px;
+$btn-pop: 4px;
+$btn-border-radius: 4px;
 
 @mixin btn-colors($bg, $text, $border){
     color: $text;
@@ -10,13 +11,13 @@ $btn-pop: 3px;
             color: darken($text, 6);
         }
         border-color: darken($border, 10);
-        bottom: $btn-pop;
         z-index: 1;
+        @include transform( translate(0, -$btn-pop) );
         @include box-shadow( 0px $btn-pop 0 darken($border, 10));
     }
 
     &:active {
-        bottom: 0;
+        @include transform( translate(0, 0) );
         @include box-shadow( none );
     }
 }
@@ -34,7 +35,7 @@ a.btn {
     text-decoration: none;
     cursor: pointer;
     outline: none;
-    @include border-radius( 2px );
+    @include border-radius( $btn-border-radius );
     @include transition( all .15s ease-out );
 
     @include btn-colors( $btn-normal-bg, $btn-normal-text, $btn-normal-border );
@@ -75,9 +76,14 @@ a.btn {
         float: left;
         display: block;
         margin-left: -$btn-border-width;
+        @include border-radius( 0px );
 
         &:first-child {
             margin-left: 0;
+            @include border-radius( $btn-border-radius 0 0 $btn-border-radius );
+        }
+        &:last-child {
+            @include border-radius( 0 $btn-border-radius $btn-border-radius 0 );
         }
     }
 
@@ -88,9 +94,14 @@ a.btn {
             width: 100%;
             margin-left: 0;
             margin-top: -$btn-border-width;
+            @include border-radius( 0px );
 
             &:first-child {
                 margin-top: 0;
+                @include border-radius( $btn-border-radius $btn-border-radius 0 0 );
+            }
+            &:last-child {
+                @include border-radius( 0 0 $btn-border-radius $btn-border-radius );
             }
         }        
     }
