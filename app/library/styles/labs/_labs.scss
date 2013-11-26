@@ -1,15 +1,15 @@
-$font-family-minute-labs: 'sf_cartoonist_hand', Helvetica, Arial, sans-serif;
-$font-family-sans-serif: 'pt-sans', Helvetica, Arial, sans-serif;
-
 @import "compass/reset";
 @import "compass/css3";
 
+@import "_mixins";
+@import "_vars";
 @import "_fonts";
 @import "_type";
-// @import "_buttons";
+@import "_buttons";
 
 body {
 	font-family: $font-family-sans-serif;
+	color: #444;
 }
 
 h1, h2, h3, h4, h5, h6 {
