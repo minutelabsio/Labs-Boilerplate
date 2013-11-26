@@ -1,0 +1,29 @@
+{
+    "name": "Minute-Labs-Boilerplate",
+    "version": "0.0.1",
+    "description": "Boilerplate project setup for general use",
+    "author": "Jasper Palfree <info@minutelabs.io>",
+    "contributors": [
+        {
+            "name": "Jasper Palfree",
+            "email": "jasper@wellcaffeinated.net"
+        }
+    ],
+    "main": null,
+    "dependencies": {},
+    "devDependencies": {
+        "prompt": "*",
+        "http-server": "*",
+        "grunt": "*",
+        "grunt-bg-shell": "*",
+        "grunt-contrib-clean": "*",
+        "grunt-contrib-copy": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-img": "*",
+        "grunt-contrib-requirejs": "*",
+        "grunt-contrib-compass": "*",
+        "grunt-replace": "*"
+    },
+    "bundledDependencies": [],
+    "license": "MIT"
+}

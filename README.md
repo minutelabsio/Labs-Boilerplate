@@ -1,4 +1,5 @@
-Labs-Boilerplate
-================
+# Minute Labs Boilerplate
 
-Web Boilerplate
+Mainly for internal use... but feel free to take.
+
+By Jasper Palfree - [minutelabs.io](http://minutelabs.io)
