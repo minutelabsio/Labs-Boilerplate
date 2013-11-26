@@ -36,8 +36,8 @@ a.btn {
     cursor: pointer;
     outline: none;
     @include border-radius( $btn-border-radius );
+    @include transform( translate(0, 0) );
     @include transition( all .15s ease-out );
-
     @include btn-colors( $btn-normal-bg, $btn-normal-text, $btn-normal-border );
 
     // disabled
@@ -46,7 +46,7 @@ a.btn {
         @include btn-colors( $btn-disabled-bg, $btn-disabled-text, $btn-disabled-border );
 
         &:hover {
-            bottom: 0;
+            @include transform( translate(0, 0) );
             @include box-shadow( none );
         }
     }
