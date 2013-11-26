@@ -8,10 +8,17 @@
 @import "_buttons";
 
 body {
-	font-family: $font-family-sans-serif;
-	color: #444;
+    font-family: $font-family-sans-serif;
+    color: #444;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-family-minute-labs;
+    font-family: $font-family-minute-labs;
+    font-weight: 700;
+    color: #21302E;
 }
+
+h4, h5, h6 {
+    letter-spacing: 1px;
+}
+

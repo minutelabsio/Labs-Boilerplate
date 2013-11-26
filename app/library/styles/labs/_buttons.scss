@@ -3,7 +3,7 @@ $btn-pop: 3px;
 @mixin btn-colors($bg, $text, $border){
     color: $text;
     background: $bg;
-    border: 1px solid $border;
+    border: $btn-border-width solid $border;
     
     &:hover {
         @if (lightness($text) < 50){
@@ -11,6 +11,7 @@ $btn-pop: 3px;
         }
         border-color: darken($border, 10);
         bottom: $btn-pop;
+        z-index: 1;
         @include box-shadow( 0px $btn-pop 0 darken($border, 10));
     }
 
@@ -73,7 +74,7 @@ a.btn {
     a.btn {
         float: left;
         display: block;
-        margin-left: -1px;
+        margin-left: -$btn-border-width;
 
         &:first-child {
             margin-left: 0;
@@ -86,7 +87,7 @@ a.btn {
             float: none;
             width: 100%;
             margin-left: 0;
-            margin-top: -1px;
+            margin-top: -$btn-border-width;
 
             &:first-child {
                 margin-top: 0;
