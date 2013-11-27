@@ -1,9 +1,12 @@
-@import "compass/reset";
 @import "compass/css3";
 
+@import "_normalize";
 @import "_mixins";
 @import "_vars";
+@import "_layers-grid";
+@import "_layers-lists";
 @import "_fonts";
+@import "_forms";
 @import "_type";
 @import "_buttons";
 
@@ -13,12 +16,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $font-family-minute-labs;
-    font-weight: 700;
     color: #21302E;
 }
-
-h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .comic {
+    font-family: $font-family-minute-labs;
+    text-rendering: optimizeLegibility;
+}
+h4, h5, h6, .comic {
     letter-spacing: 1px;
+}
+p.comic {
+    @include adjust-font-size-to( 18px );
 }
 

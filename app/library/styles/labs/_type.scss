@@ -7,12 +7,41 @@ $scale: 6/5;
 
 @include establish-baseline;
 
-@for $i from 1 through 4 {
-    h#{$i} {
-        $fs: $scale * (5 - $i) * $base-font-size;
-        @include adjust-font-size-to( $fs, 4-$i );
-        margin: rhythm(2, $fs) 0;
-    }
+body {
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -epub-hyphens: auto;
+    hyphens: auto;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] {
+    word-break: normal;
+}
+
+h1 {
+    $fs: $scale * 4 * $base-font-size;
+    @include adjust-font-size-to( $fs, 3 );
+    margin: rhythm(2, $fs) 0;
+}
+
+h2 {
+    $fs: $scale * 3 * $base-font-size;
+    @include adjust-font-size-to( $fs, 2 );
+    margin: rhythm(2, $fs) 0;
+}
+
+h3 {
+    $fs: $scale * 2 * $base-font-size;
+    @include adjust-font-size-to( $fs, 1.5 );
+    margin: rhythm(2, $fs) 0;
+}
+
+h4 {
+    $fs: $scale * 1 * $base-font-size;
+    @include adjust-font-size-to( $fs, 1 );
+    margin: rhythm(2, $fs) 0;
 }
 
 h5, h6 {
