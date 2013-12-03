@@ -43,7 +43,10 @@ define(
 
                 var self = this;
 
-                
+                $(document).on('click', '[href="#details"]', function(){
+                    $(document.body).toggleClass('offcanvas-active');
+                    return false;
+                });
             },
 
             /**

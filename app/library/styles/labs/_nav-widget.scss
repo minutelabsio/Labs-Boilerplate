@@ -1,0 +1,54 @@
+#nav-widget {
+    position: absolute;
+    top: .5em;
+    left: .5em;
+    overflow: hidden;
+    width: 50%;
+
+    .logo {
+        font: 0/0 'a';
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: image-url('logo-minute-labs.png') no-repeat center 0;
+        background-size: 100%;
+    }
+
+    .top,
+    .bottom {
+        position: absolute;
+        top: 0;
+        left: 100px;
+    }
+
+    .bottom {
+        top: rhythm(1);
+    }
+
+    .title {
+        @include adjust-font-size-to(16px, 1);
+        margin: 0;
+        display: inline-block;
+        margin-right: 2em;
+
+    }
+
+    ul {
+        
+        &,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            
+
+            @include adjust-font-size-to(16px, 1);
+        }
+
+        li {
+            margin-right: 1em;
+        }
+    }
+}
+

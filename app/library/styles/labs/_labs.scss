@@ -9,6 +9,8 @@
 @import "_forms";
 @import "_type";
 @import "_buttons";
+@import "_off-canvas";
+@import "_nav-widget";
 
 body {
     font-family: $font-family-sans-serif;
@@ -29,3 +31,14 @@ p.comic {
     @include adjust-font-size-to( 18px );
 }
 
+// temporary
+#viewport {
+    overflow: hidden;
+}
+
+#details {
+    @include box-sizing( border-box );
+    padding: 1em;
+    background: #fafafa;
+    @include box-shadow( inset -1px 0px 4px rgba(50, 50, 50, 0.3) );
+}

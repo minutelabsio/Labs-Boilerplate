@@ -1,0 +1,38 @@
+$width: 400px;
+
+#wrap-outer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+#wrap-inner {
+    position: relative;
+    width: 100%;
+    left: 0;
+
+    .offcanvas-active & {
+        left: $width;
+    }
+    .csstransforms.csstransitions & {
+        @include transform( translate(0, 0) );
+        @include transition( transform .3s ease-out );
+    }
+    .csstransforms.csstransitions .offcanvas-active & {
+        left: 0;
+        @include transform( translate($width, 0) );
+    }
+}
+
+[data-offcanvas] {
+    position: absolute;
+    top: 0;
+    left: -$width;
+    width: $width;
+    height: 100%;
+
+    .csstransforms.csstransitions & {
+        left: 0;
+        @include transform( translate(-$width, 0) );
+    }
+}
