@@ -63,3 +63,37 @@
     font-weight: normal;
     font-style: italic;
 }
+
+
+@font-face {
+    font-family: 'latin-modern-mono';
+    src: font-url('Latin-Modern-Mono/latinmodernmono_10regular_macroman/lmmono10-regular-webfont.eot');
+    src: font-url('Latin-Modern-Mono/latinmodernmono_10regular_macroman/lmmono10-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('Latin-Modern-Mono/latinmodernmono_10regular_macroman/lmmono10-regular-webfont.woff') format('woff'),
+         font-url('Latin-Modern-Mono/latinmodernmono_10regular_macroman/lmmono10-regular-webfont.ttf') format('truetype'),
+         font-url('Latin-Modern-Mono/latinmodernmono_10regular_macroman/lmmono10-regular-webfont.svg#latin-modern-mono') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latin-modern-mono-light';
+    src: font-url('Latin-Modern-Mono/latinmodernmonolight_10regular_macroman/lmmonolt10-regular-webfont.eot');
+    src: font-url('Latin-Modern-Mono/latinmodernmonolight_10regular_macroman/lmmonolt10-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('Latin-Modern-Mono/latinmodernmonolight_10regular_macroman/lmmonolt10-regular-webfont.woff') format('woff'),
+         font-url('Latin-Modern-Mono/latinmodernmonolight_10regular_macroman/lmmonolt10-regular-webfont.ttf') format('truetype'),
+         font-url('Latin-Modern-Mono/latinmodernmonolight_10regular_macroman/lmmonolt10-regular-webfont.svg#latin-modern-mono-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latin-modern-mono-prop';
+    src: font-url('Latin-Modern-Mono/latinmodernmonoprop_10regular_macroman/lmmonoprop10-regular-webfont.eot');
+    src: font-url('Latin-Modern-Mono/latinmodernmonoprop_10regular_macroman/lmmonoprop10-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('Latin-Modern-Mono/latinmodernmonoprop_10regular_macroman/lmmonoprop10-regular-webfont.woff') format('woff'),
+         font-url('Latin-Modern-Mono/latinmodernmonoprop_10regular_macroman/lmmonoprop10-regular-webfont.ttf') format('truetype'),
+         font-url('Latin-Modern-Mono/latinmodernmonoprop_10regular_macroman/lmmonoprop10-regular-webfont.svg#latin-modern-mono-prop') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

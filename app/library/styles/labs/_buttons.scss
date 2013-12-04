@@ -12,7 +12,7 @@ $btn-border-radius: 4px;
         }
         border-color: darken($border, 10);
         z-index: 1;
-        @include transform( translate(0, -$btn-pop) );
+        @include transform( translate3d(0, -$btn-pop, 0) );
         @include box-shadow( 0px $btn-pop 0 darken($border, 10));
     }
 
@@ -25,9 +25,8 @@ $btn-border-radius: 4px;
 button,
 a.btn {
     position: relative;
-    @include adjust-font-size-to( 20px );
+    @include adjust-font-size-to( 18px );
     font-family: $font-family-minute-labs;
-    letter-spacing: 1px;
     display: inline-block;
     text-align: center;
     margin: 0;
@@ -36,7 +35,7 @@ a.btn {
     cursor: pointer;
     outline: none;
     @include border-radius( $btn-border-radius );
-    @include transform( translate(0, 0) );
+    @include transform( translate3d(0, 0, 0) );
     @include transition( all .15s ease-out );
     @include btn-colors( $btn-normal-bg, $btn-normal-text, $btn-normal-border );
 
@@ -46,7 +45,7 @@ a.btn {
         @include btn-colors( $btn-disabled-bg, $btn-disabled-text, $btn-disabled-border );
 
         &:hover {
-            @include transform( translate(0, 0) );
+            @include transform( translate3d(0, 0, 0) );
             @include box-shadow( none );
         }
     }
