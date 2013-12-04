@@ -32,6 +32,12 @@ p.comic {
 }
 
 // temporary
+
+#nav-widget {
+    @include nav-widget(#fff, #333);
+}
+
+
 #viewport {
     overflow: hidden;
 }

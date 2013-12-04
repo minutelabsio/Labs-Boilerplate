@@ -1,53 +1,95 @@
-#nav-widget {
-    position: absolute;
-    top: .5em;
-    left: .5em;
-    overflow: hidden;
-    width: 50%;
+@mixin nav-widget($bg: #222, $textColor: #fff, $textSize: 14px) {
+    $imgWidth: 40px;
+    $imgHeight: 38px;
+    $fontFamily: monospace;
 
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2 * $textSize + 4px;
+
+    &,
+    a {
+        color: $textColor;
+        text-decoration: none;
+    }
+    
     .logo {
-        font: 0/0 'a';
+        position: absolute;
         display: block;
-        width: 100px;
-        height: 100px;
-        background: image-url('logo-minute-labs.png') no-repeat center 0;
-        background-size: 100%;
+        background: $bg;
+        margin: 0;
+        height: $imgHeight;
+        padding: 9px;
+        border-bottom: 1px solid darken($bg, 20);
+
+        img {
+            @include border-radius( 3px );
+        }
     }
 
     .top,
     .bottom {
-        position: absolute;
-        top: 0;
-        left: 100px;
+        float: left;
+        position: relative;
+        margin-left: 2 * 9px + $imgWidth;
+        background: $bg;
+        font-family: $fontFamily;
+        font-size: $textSize;
+        line-height: 2;
+        border: 0px solid darken($bg, 20);
+        border-width: 0 1px 1px 0;
+        @include border-radius( 0 0 3px );
+
+        a {
+            display: block;
+            padding: 0 0.6em;
+            @include border-radius( 3px );
+
+            &:hover {
+                background: steelblue;
+            }
+        }
+    }
+
+    .top {
+
     }
 
     .bottom {
-        top: rhythm(1);
+        display: block;
+        float: left;
+        bottom: 1px;
+        border-top-width: 0;
+        z-index: 1;
     }
 
     .title {
-        @include adjust-font-size-to(16px, 1);
-        margin: 0;
-        display: inline-block;
-        margin-right: 2em;
-
+        font-size: 1em;
+        line-height: 2;
+        display: block;
+        float: left;
+        clear: none;
+        margin: 0 2em 0 0.58em;
+        color: $textColor;
+        font-family: $fontFamily;
+        font-weight: normal;
     }
 
     ul {
-        
+
         &,
         li {
+            display: block;
+            float: left;
+            clear: none;
             list-style: none;
             padding: 0;
             margin: 0;
-            display: inline-block;
-            
-
-            @include adjust-font-size-to(16px, 1);
         }
 
         li {
-            margin-right: 1em;
+            
         }
     }
 }
