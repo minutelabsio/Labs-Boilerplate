@@ -6,6 +6,7 @@
 @import "_layers-grid";
 @import "_layers-lists";
 @import "_fonts";
+@import "_icons";
 @import "_forms";
 @import "_type";
 @import "_buttons";
@@ -15,14 +16,24 @@
 
 body {
     font-family: $font-family-sans-serif;
-    color: #444;
+    color: $deep-grey;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #21302E;
+    color: $deep-grey-dark;
     font-family: $font-family-minute-labs;
     text-rendering: optimizeLegibility;
 }
+
+.invert {
+    background: $deep-grey-dark;
+    color: $grey-dark;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $grey;
+    }
+}
+
 .comic {
     font-family: $font-family-comic;
     letter-spacing: 1px;
@@ -35,6 +46,7 @@ p.comic {
 
 #nav-widget {
     @include nav-widget();
+    // @include nav-widget(#fff, #333);
 }
 
 
@@ -44,7 +56,10 @@ p.comic {
 
 #details {
     @include box-sizing( border-box );
-    padding: 1em;
-    background: #fafafa;
+    padding: 0 2em;
+    // background: #fafafa;
+    // @extend .invert;
+    
     @include box-shadow( inset -1px 0px 4px rgba(50, 50, 50, 0.3) );
 }
+

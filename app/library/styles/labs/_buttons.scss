@@ -20,6 +20,20 @@ $btn-border-radius: 4px;
         @include transform( translate(0, 0) );
         @include box-shadow( none );
     }
+
+    // disabled
+    &.disabled,
+    &[disabled] {
+        color: mix($grey, $text, 40);
+        background: mix($grey, $bg, 40);
+        border-color: mix($grey, $border, 40);
+
+
+        &:hover {
+            @include transform( translate3d(0, 0, 0) );
+            @include box-shadow( none );
+        }
+    }
 }
 
 button,
@@ -38,17 +52,6 @@ a.btn {
     @include transform( translate3d(0, 0, 0) );
     @include transition( all .15s ease-out );
     @include btn-colors( $btn-normal-bg, $btn-normal-text, $btn-normal-border );
-
-    // disabled
-    &.disabled,
-    &[disabled] {
-        @include btn-colors( $btn-disabled-bg, $btn-disabled-text, $btn-disabled-border );
-
-        &:hover {
-            @include transform( translate3d(0, 0, 0) );
-            @include box-shadow( none );
-        }
-    }
 
     // ok
     &.ok {
