@@ -12,7 +12,7 @@ module.exports = ({
     appDir: '<%= config.sourceDir %>',
     // The baseUrl of our javascript
     // all require calls are relative to this path
-    baseUrl: 'library/js/',
+    baseUrl: 'js/',
 
     // use optimize: none to get concatenation without optimization for debugging
     // optimize: 'none',
@@ -35,7 +35,7 @@ module.exports = ({
     
     // Include configurations from our require-config file
     // so r.js knows where to look for resources
-    mainConfigFile: '<%= config.sourceDir %>/library/js/config/require-config.js',
+    mainConfigFile: '<%= config.sourceDir %>/js/config/require-config.js',
 
     // Define our build layers...
     modules: [

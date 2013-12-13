@@ -6,14 +6,12 @@
     "contributors": [
         {
             "name": "Jasper Palfree",
-            "email": "jasper@wellcaffeinated.net"
+            "email": "info@minutelabs.io"
         }
     ],
     "main": null,
     "dependencies": {},
     "devDependencies": {
-        "prompt": "*",
-        "http-server": "*",
         "grunt": "*",
         "grunt-bg-shell": "*",
         "grunt-contrib-clean": "*",
@@ -21,8 +19,7 @@
         "grunt-contrib-jshint": "*",
         "grunt-img": "*",
         "grunt-contrib-requirejs": "*",
-        "grunt-contrib-compass": "*",
-        "grunt-replace": "*"
+        "grunt-contrib-compass": "*"
     },
     "bundledDependencies": [],
     "license": "MIT"

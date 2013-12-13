@@ -1,0 +1,15 @@
+permalink: /:year-:month-:day/:title
+markdown: rdiscount
+exclude: ["README.md", "CNAME", "LICENSE", "build", "config.rb", "Gruntfile.js", "package.json", "jshint.json"]
+
+title : LAB_TITLE
+description : ""
+version: "0.0.1"
+
+ml_url: "http://minutelabs.io"
+library_path: "library"
+
+show :
+  details: true
+  comments: true
+

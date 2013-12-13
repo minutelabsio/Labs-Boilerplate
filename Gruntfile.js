@@ -8,24 +8,14 @@
 module.exports = function(grunt) {
 
     var path = require('path');
-    var prompt = require('prompt');
     var pkg, config;
 
     pkg = grunt.file.readJSON('package.json');
 
     config = {
-        banner : [
-            '/**\n',
-            ' * <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n',
-            ' * <%= pkg.description %>\n',
-            ' *\n',
-            ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n',
-            ' * Licensed <%= pkg.license %>\n',
-            ' */\n'
-        ].join(''),
-
-        sourceDir: 'app',
-        compressedDir: 'dist',
+        
+        sourceDir: 'library',
+        compressedDir: 'library-build',
         utils: '', // Any utils can go here 
 
         pkg : pkg
@@ -41,7 +31,7 @@ module.exports = function(grunt) {
                 jshintrc : 'jshint.json'
             },
             source: [
-                '<%= config.sourceDir %>/library/js/{.,modules,mediators}/*.js'
+                '<%= config.sourceDir %>/js/{.,modules,mediators}/*.js'
             ]
         },
         bgShell: {
@@ -55,7 +45,7 @@ module.exports = function(grunt) {
             },
 
             httpserver: {
-                cmd: 'node node_modules/http-server/bin/http-server -p 8080 <%= config.sourceDir %>',
+                cmd: 'jekyll server --watch',
                 bg: false
             },
 
@@ -81,7 +71,7 @@ module.exports = function(grunt) {
         },
         img: {
             app: {
-                src: '<%= config.compressedDir %>/library'
+                src: '<%= config.compressedDir %>'
             }
         },
         // r.js optimization task
@@ -89,41 +79,8 @@ module.exports = function(grunt) {
             app: {
                 options: require('./build/require-build')
             }
-        },
-        replace: {
-            dist: {
-                options: { patterns: [{ json: config }] },
-                files: [{
-                    src: ['<%= config.compressedDir %>/*.html'],
-                    dest: './'
-                }]
-            }
         }
     });
-
-    function promptVersion(){
-        var ver = pkg.version;
-        var properties = [
-            {
-                message: 'Enter the version (defaults to last)',
-                name: 'version', 
-                validator: /^[0-9]+\.[0-9]+\.[0-9]+$/,
-                default: ver,
-                warning: 'Version must take the form #.#.#'
-            }
-        ];
-
-        var done = this.async();
-
-        prompt.start();
-        prompt.get(properties, function (err, result) {
-            if (err) { return done(err); }
-            console.log('Setting version to: ' + result.version);
-            pkg.version = result.version;
-            grunt.file.write('package.json', JSON.stringify( pkg, null, 4 ));
-            done();
-        });
-    }
 
     // Load plugins
     grunt.loadNpmTasks('grunt-bg-shell');
@@ -132,16 +89,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-img');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-replace');
     
     // Tasks
-    grunt.registerTask('version', promptVersion);
     grunt.registerTask('compress-only', ['compass', 'requirejs:app'])
 
     // Primary tasks
     grunt.registerTask('cleanup', ['clean', 'bgShell:cleanCompass']);
     grunt.registerTask('dev', [ 'bgShell:watchCompass', 'bgShell:httpserver' ]);
-    grunt.registerTask('build', ['cleanup', 'version', 'jshint:source', 'compress-only', 'replace:dist', 'img:app']);
+    grunt.registerTask('build', ['cleanup', 'jshint:source', 'compress-only', 'img:app']);
     
     // Default task(s).
     grunt.registerTask('default', ['build']);
