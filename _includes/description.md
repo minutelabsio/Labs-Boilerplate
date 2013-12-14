@@ -1,4 +1,2 @@
----
----
 
 Describe the Lab.
