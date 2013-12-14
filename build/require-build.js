@@ -48,7 +48,7 @@ module.exports = ({
             name: 'config/require-config',
 
             include: [
-                'mediators/globals'
+                
             ]
         },
         // page level dependencies.
