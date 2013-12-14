@@ -2,13 +2,14 @@ permalink: /:year-:month-:day/:title
 markdown: rdiscount
 exclude: ["README.md", "CNAME", "LICENSE", "build", "config.rb", "Gruntfile.js", "package.json", "jshint.json"]
 
-title : "Title of the Lab"
-id : "/DATE/TITLE"
-description : "Short description"
+title : "Title of the Lab" # changeme
+id : "/DATE/TITLE" # changeme
+description : "Short description" # changeme
+thumb: "http://minutelabs.io/assets/THUMB_IMAGE" # changeme
 version: "0.0.1"
 
 ml_url: "http://minutelabs.io"
-library_path: "library"
+library_path: "library" # changeme
 
 show :
   branding: true
