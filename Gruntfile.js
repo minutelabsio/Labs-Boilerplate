@@ -91,7 +91,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     
     // Tasks
-    grunt.registerTask('compress-only', ['compass', 'requirejs:app'])
+    grunt.registerTask('compress-only', ['compass', 'requirejs:app']);
+    grunt.registerTask('server', ['bgShell:httpserver']);
 
     // Primary tasks
     grunt.registerTask('cleanup', ['clean', 'bgShell:cleanCompass']);
