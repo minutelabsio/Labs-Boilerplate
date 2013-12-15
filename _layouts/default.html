@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{ site.library_path }}/styles/site.css" />
 
   <!-- js includes -->
-  <script src="library/js/vendor/modernizr.js"></script>
+  <script src="{{ site.library_path }}/library/js/vendor/modernizr.js"></script>
   <script>
     var Lab = { title: '{{ site.title }}', id: '{{ site.id }}' };
     var require = { urlArgs: 'v={{ site.version }}' };
@@ -46,6 +46,7 @@
   <![endif]-->
 
   <script src="{{ site.ml_url }}/assets/labs-nav.js"></script>
+  <script src="{{ site.ml_url }}/assets/ga.js" async></script>
   
   {% if site.show.comments and site.show.details %}
   <script type="text/javascript">
