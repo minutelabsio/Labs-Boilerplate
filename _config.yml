@@ -3,10 +3,9 @@ markdown: rdiscount
 exclude: ["README.md", "CNAME", "LICENSE", "build", "config.rb", "Gruntfile.js", "package.json", "jshint.json"]
 
 title : "Title of the Lab" # changeme
-id : "/DATE/TITLE" # changeme
+id : "" # changeme
 description : "Short description" # changeme
-prevLabOffset: "" #changeme
-thumb: "http://minutelabs.io/assets/THUMB_IMAGE" # changeme
+thumb: "http://minutelabs.io/assets/THUMB_IMAGE" # changem
 version: "0.0.1"
 
 ml_url: "http://minutelabs.io"
