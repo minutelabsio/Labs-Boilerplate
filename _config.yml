@@ -5,10 +5,13 @@ exclude: ["README.md", "CNAME", "LICENSE", "build", "config.rb", "Gruntfile.js",
 title : "Title of the Lab" # changeme
 id : "/DATE/TITLE" # changeme
 description : "Short description" # changeme
+prevLabOffset: "" #changeme
 thumb: "http://minutelabs.io/assets/THUMB_IMAGE" # changeme
 version: "0.0.1"
 
 ml_url: "http://minutelabs.io"
+ml_library: "http://labs.minutelabs.io/library"
+ml_assets: "http://labs.minutelabs.io/assets"
 library_path: "library" # changeme
 
 show :
