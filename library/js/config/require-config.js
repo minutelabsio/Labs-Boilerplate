@@ -6,7 +6,7 @@ require.config({
     config: {
         // module specific configuration
     },
-    
+
     shim: {
         // Add shims for things here
     },
@@ -27,18 +27,33 @@ require.config({
 
         // MVC
         'stapes': 'vendor/stapes',
+        'hammer.jquery': 'vendor/hammer.jquery',
         'moddef': 'util/module',
-        
+
         // jQuery
-        'jquery': 'vendor/jquery'
+        'jquery': 'vendor/jquery',
+        'hammerjs': 'vendor/hammer',
+
+        // draw helper
+        'canvas-draw': 'modules/canvas-draw',
+
+        // requestAnimationFrame polyfill
+        'raf': 'vendor/raf'
+
+
     },
 
     packages: [
         { name: 'when', location: 'vendor/when', main: 'when' }
+        ,{
+            name: 'physicsjs',
+            location: 'vendor/physicsjs-0.6.0',
+            main: 'physicsjs-0.6.0.min'
+        }
     ],
 
     map: {
-        
+
         '*' : {
             'jquery': 'modules/adapters/jquery', // jQuery noconflict adapter
             'site-config': 'config/site-config.json'

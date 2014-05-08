@@ -1,65 +1,40 @@
-define(
-    [
-        'jquery',
-        'moddef'
-    ],
-    function(
-        $,
-        M
-    ) {
+define([
+    'jquery',
+    'moddef'
+], function(
+    $,
+    M
+) {
+    'use strict';
 
-        'use strict';
+    // Page-level Mediator
+    var Mediator = M({
 
-        /**
-         * Page-level Mediator
-         * @module Boilerplate
-         * @implements {Stapes}
-         */
-        var Mediator = M({
+        // Mediator Constructor
+        constructor: function(){
 
-            /**
-             * Mediator Constructor
-             * @return {void}
-             */
-            constructor : function(){
+            var self = this;
+            self.initEvents();
 
-                var self = this;
-                self.initEvents();
+            $(function(){
+                self.onDomReady();
+                self.resolve('domready');
+            });
+        }
 
-                $(function(){
-                    self.resolve('domready');
-                });
+        // Initialize events
+        ,initEvents: function(){
 
-                self.after('domready').then(function(){
-                    self.onDomReady();
-                });
-            },
+            var self = this;
+        }
 
-            /**
-             * Initialize events
-             * @return {void}
-             */
-            initEvents : function(){
+        // DomReady Callback
+        ,onDomReady: function(){
 
-                var self = this;
-            },
+            var self = this;
+        }
 
-            /**
-             * DomReady Callback
-             * @return {void}
-             */
-            onDomReady : function(){
+    }, ['events']);
 
-                var self = this;
-
-            }
-
-        }, ['events']);
-
-        return new Mediator();
-    }
-);
-
-
-
-
+    return new Mediator();
+});
